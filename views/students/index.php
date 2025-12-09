@@ -9,7 +9,6 @@
 
 $title = 'Студенти';
 $action = 'students';
-$contentFile = __FILE__;
 
 // Отримання загальної статистики
 $totalStudents = count($students);
@@ -18,8 +17,7 @@ foreach ($students as $student) {
     $totalEnrollments += $student->getCourseCount();
 }
 
-if (basename($_SERVER['PHP_SELF']) === 'index.php') {
-    ob_start();
+ob_start();
 ?>
 
 <div class="stats">
@@ -53,7 +51,7 @@ if (basename($_SERVER['PHP_SELF']) === 'index.php') {
 <?php endif; ?>
 
 <?php
-    $content = ob_get_clean();
-    require_once __DIR__ . '/../layout.php';
-}
+$content = ob_get_clean();
+$contentFile = __FILE__;
+require_once __DIR__ . '/../layout.php';
 ?>

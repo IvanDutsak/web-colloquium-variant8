@@ -9,10 +9,8 @@
 
 $title = 'Студент: ' . htmlspecialchars($student->name);
 $action = 'student';
-$contentFile = __FILE__;
 
-if (basename($_SERVER['PHP_SELF']) === 'index.php') {
-    ob_start();
+ob_start();
 ?>
 
 <a href="index.php?action=students" style="margin-bottom: 20px; display: inline-block;">← Повернутися до списку студентів</a>
@@ -67,7 +65,7 @@ if (basename($_SERVER['PHP_SELF']) === 'index.php') {
 <?php endif; ?>
 
 <?php
-    $content = ob_get_clean();
-    require_once __DIR__ . '/../layout.php';
-}
+$content = ob_get_clean();
+$contentFile = __FILE__;
+require_once __DIR__ . '/../layout.php';
 ?>

@@ -273,7 +273,7 @@
         </main>
         
         <footer>
-            <p>© 2024 Course Management System | Варіант 8: Зв'язки між сутностями та DRY принцип</p>
+            <p>© 2025 Course Management System | Варіант 8: Зв'язки між сутностями та DRY принцип</p>
         </footer>
     </div>
 </body>

@@ -9,7 +9,6 @@
 
 $title = 'Курси';
 $action = 'courses';
-$contentFile = __FILE__;
 
 // Отримання загальної статистики
 $totalCourses = count($courses);
@@ -18,9 +17,8 @@ foreach ($courses as $course) {
     $totalStudents += $course->getStudentCount();
 }
 
-// Якщо це основний запит, показуємо layout
-if (basename($_SERVER['PHP_SELF']) === 'index.php') {
-    ob_start();
+// Початок буферизації контенту
+ob_start();
 ?>
 
 <div class="stats">
@@ -54,7 +52,7 @@ if (basename($_SERVER['PHP_SELF']) === 'index.php') {
 <?php endif; ?>
 
 <?php
-    $content = ob_get_clean();
-    require_once __DIR__ . '/../layout.php';
-}
+$content = ob_get_clean();
+$contentFile = __FILE__;
+require_once __DIR__ . '/../layout.php';
 ?>
