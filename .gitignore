@@ -1,0 +1,24 @@
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PHP
+.php-version
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+
+# Cache
+__pycache__/
+*.pyc
